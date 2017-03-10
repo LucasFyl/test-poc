@@ -1,0 +1,17 @@
+stages:
+  - test
+  - publish
+cache:
+    paths:
+      - node_modules/
+test:
+  stage: test
+  script:
+   - npm i --production
+   - npm test
+publish:
+  stage: publish
+  script:
+   - npm publish
+  only:
+   - tags
