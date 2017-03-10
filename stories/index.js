@@ -1,6 +1,9 @@
 import React from 'react';
-import { storiesOf, action, linkTo } from '@kadira/storybook';
+import {storiesOf, action, linkTo} from '@kadira/storybook';
 import TemplateComponent from '../src';
 
-storiesOf('Template Component', module)
-    .add('prop', () => <TemplateComponent />)
+storiesOf('Template', module)
+    .addWithInfo('active', `Component description`,  () => <TemplateComponent active={true}/>)
+    .addWithInfo('not active', `Component description`,  () => <TemplateComponent active={false}/>);
+
+

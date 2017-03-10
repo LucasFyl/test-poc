@@ -12,6 +12,8 @@
   },
   "license": "ISC",
   "devDependencies": {
+    "@kadira/react-storybook-addon-info": "^3.3.0",
+    "@kadira/storybook": "^2.21.0",
     "babel-cli": "^6.23.0",
     "babel-eslint": "^7.1.1",
     "babel-preset-es2015": "^6.22.0",
@@ -19,11 +21,12 @@
     "babel-preset-stage-0": "^6.22.0",
     "eslint": "^3.17.1",
     "eslint-config-adotlinter": "^1.7.9",
-    "eslint-plugin-react": "^6.10.0",
-    "@kadira/storybook": "^2.21.0"
+    "eslint-plugin-react": "^6.10.0"
   },
   "dependencies": {
     "react": "^15.4.2",
-    "react-dom": "^15.4.2"
+    "react-dom": "^15.4.2",
+    "styletron": "^2.5.1",
+    "styletron-react": "^2.5.3"
   }
 }
