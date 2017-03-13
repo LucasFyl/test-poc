@@ -1,27 +1,22 @@
-import React, {Component, PropTypes} from 'react';
+import React, {PropTypes} from 'react';
 import Styletron from 'styletron';
 import {StyletronProvider} from 'styletron-react';
 import {StyledTemplate} from './style';
 
 const styletron = new Styletron();
 
-export default class Template extends Component{
-    static displayName = 'Template';
-    static propTypes = {
-        active: PropTypes.bool
-    };
-    constructor(props){
-        super(props);
-    }
-    render(){
-        const {active} = this.props;
+const Template = (props) => {
+    const {active} = props;
+    return (
+        <StyletronProvider styletron={styletron}>
+            <StyledTemplate active={active} />
+        </StyletronProvider>
+    );
+};
 
-        return(
-            <StyletronProvider styletron={styletron}>
-                <StyledTemplate active={active}>
+Template.displayName = 'Template';
+Template.propTypes = {
+    active: PropTypes.bool
+};
 
-                </StyledTemplate>
-            </StyletronProvider>
-        );
-    }
-}
+export default Template;
