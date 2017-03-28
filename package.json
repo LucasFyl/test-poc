@@ -29,10 +29,9 @@
     "react-test-renderer": "^15.4.2"
   },
   "dependencies": {
+    "aphrodite": "^1.2.0",
     "react": "^15.4.2",
-    "react-dom": "^15.4.2",
-    "styletron": "^2.5.1",
-    "styletron-react": "^2.5.3"
+    "react-dom": "^15.4.2"
   },
   "pre-commit": [
     "lint",
