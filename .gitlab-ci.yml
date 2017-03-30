@@ -7,7 +7,7 @@ cache:
 test:
   stage: test
   script:
-   - npm i --production
+   - npm i
    - npm test
 publish:
   stage: publish
