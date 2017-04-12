@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render Template component active 1`] = `
+<div
+  className="default_msu5iu-o_O-red_16geqrx-o_O-hover_djbono-o_O-responsive_1fuov80"
+/>
+`;
+
+exports[`Render Template component not active 1`] = `
+<div
+  className="default_msu5iu-o_O-blue_c4lqni-o_O-hover_djbono-o_O-responsive_1fuov80"
+/>
+`;
