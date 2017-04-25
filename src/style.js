@@ -1,6 +1,6 @@
 import {StyleSheet} from 'aphrodite';
 
-const styles = StyleSheet.create({
+export default StyleSheet.create({
     default: {
         width: 100,
         height: 100
@@ -22,5 +22,3 @@ const styles = StyleSheet.create({
         }
     }
 });
-
-export {styles};
