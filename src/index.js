@@ -1,15 +1,41 @@
-import React, {PropTypes} from 'react';
+import React, {PropTypes, Component} from 'react';
 import {css} from 'aphrodite';
-import {styles} from './styles';
+import style from './style';
+
+class TemplateComponent extends Component{
+    static displayName = 'TemplateComponent';
+
+    static propTypes = {
+        active: PropTypes.bool
+    };
+
+    constructor(props){
+        super(props);
+        this.state = {};
+    }
+
+    render(){
+        const {active} = this.props;
+        return (
+            <div className={css(
+            style.default,
+            active ? style.red : style.blue,
+            style.hover,
+            style.responsive)
+        } />
+        );
+    }
+}
+
 
 const Template = (props) => {
     const {active} = props;
     return (
         <div className={css(
-            styles.default,
-            active ? styles.red : styles.blue,
-            styles.hover,
-            styles.responsive)
+            style.default,
+            active ? style.red : style.blue,
+            style.hover,
+            style.responsive)
         } />
     );
 };
