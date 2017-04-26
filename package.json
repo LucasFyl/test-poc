@@ -3,7 +3,17 @@
   "version": "1.0.0",
   "description": "",
   "main": "dist/index.js",
+  "watch": {
+    "build": {
+      "patterns": [
+        "src"
+      ],
+      "extensions": "js, scss, css",
+      "quiet": false
+    }
+  },
   "scripts": {
+    "watch": "npm-watch",
     "build": "babel -d dist/ src/",
     "lint": "eslint src/",
     "test": "jest",
@@ -25,6 +35,7 @@
     "eslint-config-adotlinter": "^1.7.9",
     "eslint-plugin-react": "^6.10.0",
     "jest": "^19.0.2",
+    "npm-watch": "^0.1.8",
     "pre-commit": "^1.2.2",
     "react-test-renderer": "^15.4.2"
   },
