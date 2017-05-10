@@ -14,7 +14,9 @@
   },
   "scripts": {
     "watch": "npm-watch",
-    "build": "babel -d dist/ src/",
+    "clean": "rm -r dist/*",
+    "build-js": "babel -d dist/ src/",
+    "build": "npm run clean;npm run build-js",
     "lint": "eslint src/",
     "test": "jest",
     "coverage": "jest --coverage",
