@@ -1,4 +1,5 @@
-import React, {PropTypes, Component} from 'react';
+import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import {css} from 'aphrodite';
 import style from './style';
 
@@ -26,7 +27,6 @@ class TemplateComponent extends Component{
         );
     }
 }
-
 
 const Template = (props) => {
     const {active} = props;

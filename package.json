@@ -42,7 +42,10 @@
     "react-test-renderer": "^15.4.2"
   },
   "dependencies": {
+    "adot-font": "^1.0.6",
     "aphrodite": "^1.2.0",
+    "identity-obj-proxy": "^3.0.0",
+    "prop-types": "^15.5.9",
     "react": "^15.4.2",
     "react-dom": "^15.4.2"
   },
@@ -52,5 +55,11 @@
   "pre-commit": [
     "lint",
     "test"
-  ]
+  ],
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|less|scss)$": "identity-obj-proxy"
+    }
+  }
 }
