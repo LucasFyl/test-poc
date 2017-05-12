@@ -1,43 +1,48 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import {css, StyleSheet} from 'aphrodite';
-import merge from 'lodash.merge';
-import defaultStyle from './style';
+import {css} from 'aphrodite';
+import style from './style';
 
-export default class Button extends Component{
-    static displayName = 'Button';
+class TemplateComponent extends Component{
+    static displayName = 'TemplateComponent';
 
     static propTypes = {
-        children: PropTypes.any,
-        style: PropTypes.object,
-        disabled: PropTypes.bool,
-        outline: PropTypes.bool,
-        secondary: PropTypes.bool
-    };
-
-    static defaultProps = {
-        style: {}
+        active: PropTypes.bool
     };
 
     constructor(props){
         super(props);
+        this.state = {};
     }
 
     render(){
-        const {children, disabled, secondary, outline, style: customStyle} = this.props;
-        const style = StyleSheet.create(merge(defaultStyle, customStyle));
-
-        const btnStyle = [style.reset, style.primary];
-
-        if(disabled) btnStyle.push(style.disabled);
-        if(outline) btnStyle.push(style.outline);
-        if(secondary) btnStyle.push(style.secondary);
-        if(secondary && disabled) btnStyle.push(style.secondaryDisabled);
-
+        const {active} = this.props;
         return (
-            <button className={css(...btnStyle)}>
-                {children}
-            </button>
+            <div className={css(
+            style.default,
+            active ? style.red : style.blue,
+            style.hover,
+            style.responsive)
+        } />
         );
     }
 }
+
+const Template = (props) => {
+    const {active} = props;
+    return (
+        <div className={css(
+            style.default,
+            active ? style.red : style.blue,
+            style.hover,
+            style.responsive)
+        } />
+    );
+};
+
+Template.displayName = 'Template';
+Template.propTypes = {
+    active: PropTypes.bool
+};
+
+export default Template;

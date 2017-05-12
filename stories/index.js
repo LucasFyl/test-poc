@@ -1,12 +1,9 @@
 import React from 'react';
 import {storiesOf, action, linkTo} from '@kadira/storybook';
-import Button from '../src';
+import TemplateComponent from '../src';
 
-storiesOf('Button', module)
-    .addWithInfo('Primary', `Component description`,  () => <Button>{'Hello'}</Button>, {inline: true})
-    .addWithInfo('Secondary', `Component description`,  () => <Button secondary={true}>{'Hello'}</Button>, {inline: true})
-    .addWithInfo('Secondary Disabled', `Component description`,  () => <Button secondary={true} disabled={true}>{'Hello'}</Button>, {inline: true})
-    .addWithInfo('Primary Disabled', `Component description`,  () => <Button disabled={true}>{'Hello'}</Button>, {inline: true})
-    .addWithInfo('Outline', `Component description`,  () => <Button outline={true}>{'Hello'}</Button>, {inline: true});
+storiesOf('Template', module)
+    .addWithInfo('active', `Component description`,  () => <TemplateComponent active={true}/>, {inline: true})
+    .addWithInfo('not active', `Component description`,  () => <TemplateComponent active={false}/>, {inline: true});
 
 

@@ -1,5 +1,5 @@
 {
-  "name": "adot-button",
+  "name": "module-boilerplate",
   "version": "1.0.0",
   "description": "",
   "main": "dist/index.js",
@@ -45,7 +45,6 @@
     "adot-font": "^1.0.6",
     "aphrodite": "^1.2.0",
     "identity-obj-proxy": "^3.0.0",
-    "lodash.merge": "^4.6.0",
     "prop-types": "^15.5.9",
     "react": "^15.4.2",
     "react-dom": "^15.4.2"
@@ -54,7 +53,8 @@
     "registry": "https://nexus.adotmob.com/repository/npmjs_adotmob/"
   },
   "pre-commit": [
-    "lint"
+    "lint",
+    "test"
   ],
   "jest": {
     "moduleNameMapper": {
