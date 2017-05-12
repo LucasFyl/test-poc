@@ -8,7 +8,6 @@ test:
   stage: test
   script:
    - npm i
-   - npm test
 publish:
   stage: publish
   script:
