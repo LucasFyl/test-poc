@@ -1,9 +1,8 @@
 import React from 'react';
-import {storiesOf, action, linkTo} from '@kadira/storybook';
-import TemplateComponent from '../src';
+import {storiesOf} from '@kadira/storybook';
+import UploadPdf from '../src/UploadPdf.js';
 
-storiesOf('Template', module)
-    .addWithInfo('active', `Component description`,  () => <TemplateComponent active={true}/>, {inline: true})
-    .addWithInfo('not active', `Component description`,  () => <TemplateComponent active={false}/>, {inline: true});
-
-
+storiesOf('Upload Pdf', module)
+    .addWithInfo('', `Component description`, () =>
+        <UploadPdf />,
+    {inline: true});

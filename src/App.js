@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import {css} from 'aphrodite';
 import style from './style';
 import UploadPdf from './UploadPdf.js';
-import stylesheet from './stylesheet.css';
+import './stylesheet.css';
 
 class App extends Component{
     static displayName = 'App';

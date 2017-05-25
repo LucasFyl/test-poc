@@ -1,0 +1,18 @@
+#svgWrap,
+#pdfWrap {
+    box-shadow: 0 1px 3px #444;
+    font-size: 1px;
+    line-height: 1;
+    display: inline-block;
+    position: absolute;
+}
+#svgWrap span {
+    position: absolute;
+    cursor: text;
+    white-space: pre;
+    transform-origin: left bottom;
+    color: transparent;
+
+    background: red;
+    opacity: .5;
+}
