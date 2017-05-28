@@ -24,9 +24,7 @@ var _UploadPdf = require('./UploadPdf.js');
 
 var _UploadPdf2 = _interopRequireDefault(_UploadPdf);
 
-var _stylesheet = require('./stylesheet.css');
-
-var _stylesheet2 = _interopRequireDefault(_stylesheet);
+require('./stylesheet.css');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 

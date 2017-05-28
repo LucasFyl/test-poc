@@ -20,13 +20,11 @@ var _style = require('./style');
 
 var _style2 = _interopRequireDefault(_style);
 
-var _UploadPdf = require('./UploadPdf.js');
+require('./stylesheet.css');
 
-var _UploadPdf2 = _interopRequireDefault(_UploadPdf);
+var _RenderSvg = require('./RenderSvg');
 
-var _stylesheet = require('./stylesheet.css');
-
-var _stylesheet2 = _interopRequireDefault(_stylesheet);
+var _RenderSvg2 = _interopRequireDefault(_RenderSvg);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -36,31 +34,31 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var App = function (_Component) {
-    _inherits(App, _Component);
+var RenderData = function (_Component) {
+    _inherits(RenderData, _Component);
 
-    function App(props) {
-        _classCallCheck(this, App);
+    function RenderData(props) {
+        _classCallCheck(this, RenderData);
 
-        return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
+        return _possibleConstructorReturn(this, (RenderData.__proto__ || Object.getPrototypeOf(RenderData)).call(this, props));
     }
 
-    _createClass(App, [{
+    _createClass(RenderData, [{
         key: 'render',
         value: function render() {
+            console.log('--------', _RenderSvg2.default);
+            console.log('********', _RenderSvg2.default.state);
             return _react2.default.createElement(
                 'div',
-                { className: 'pageWrap' },
-                _react2.default.createElement(_UploadPdf2.default, null)
+                { className: 'dataWrap' },
+                'Render data here'
             );
         }
     }]);
 
-    return App;
+    return RenderData;
 }(_react.Component);
 
-App.displayName = 'App';
-App.propTypes = {
-    hasPdf: _propTypes2.default.bool
-};
-exports.default = App;
+RenderData.displayName = 'RenderData';
+RenderData.propTypes = {};
+exports.default = RenderData;

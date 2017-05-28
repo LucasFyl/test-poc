@@ -2,8 +2,13 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {css} from 'aphrodite';
 import style from './style';
+// import App from './App';
+import {Provider} from 'react-redux';
 import UploadPdf from './UploadPdf.js';
-import './stylesheet.css';
+import stylesheet from './stylesheet.css';
+import configureStore from './store/configure-store';
+
+const store = configureStore();
 
 class App extends Component{
     static displayName = 'App';
@@ -18,9 +23,9 @@ class App extends Component{
 
     render(){
         return (
-            <div className={'pageWrap'}>
+            <Provider store={store}>
                 <UploadPdf />
-            </div>
+            </Provider>
         );
     }
 }

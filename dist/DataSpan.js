@@ -14,19 +14,15 @@ var _propTypes = require('prop-types');
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
+var _reactDom = require('react-dom');
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
 var _aphrodite = require('aphrodite');
 
 var _style = require('./style');
 
 var _style2 = _interopRequireDefault(_style);
-
-var _UploadPdf = require('./UploadPdf.js');
-
-var _UploadPdf2 = _interopRequireDefault(_UploadPdf);
-
-var _stylesheet = require('./stylesheet.css');
-
-var _stylesheet2 = _interopRequireDefault(_stylesheet);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -36,31 +32,47 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var App = function (_Component) {
-    _inherits(App, _Component);
+var DataSpan = function (_Component) {
+    _inherits(DataSpan, _Component);
 
-    function App(props) {
-        _classCallCheck(this, App);
+    function DataSpan(props) {
+        _classCallCheck(this, DataSpan);
 
-        return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
+        return _possibleConstructorReturn(this, (DataSpan.__proto__ || Object.getPrototypeOf(DataSpan)).call(this, props));
     }
 
-    _createClass(App, [{
+    _createClass(DataSpan, [{
         key: 'render',
         value: function render() {
-            return _react2.default.createElement(
-                'div',
-                { className: 'pageWrap' },
-                _react2.default.createElement(_UploadPdf2.default, null)
-            );
+            var _props = this.props,
+                customStyle = _props.customStyle,
+                textContent = _props.textContent;
+
+            var spanStyle = _aphrodite.StyleSheet.create({
+                position: {
+                    display: 'block',
+                    position: 'absolute',
+                    left: '' + customStyle.left,
+                    top: '' + customStyle.top,
+                    transform: '' + customStyle.transform,
+                    fontSize: '' + customStyle.fontSize,
+                    width: customStyle.width + 'px',
+                    height: '1em',
+                    background: 'red',
+                    opacity: '.5'
+                }
+            });
+            return _react2.default.createElement('span', { 'data-text': textContent,
+                className: (0, _aphrodite.css)(spanStyle.position) });
         }
     }]);
 
-    return App;
+    return DataSpan;
 }(_react.Component);
 
-App.displayName = 'App';
-App.propTypes = {
-    hasPdf: _propTypes2.default.bool
+DataSpan.displayName = 'DataSpan';
+DataSpan.propTypes = {
+    customStyle: _propTypes2.default.object,
+    textContent: _propTypes2.default.string
 };
-exports.default = App;
+exports.default = DataSpan;

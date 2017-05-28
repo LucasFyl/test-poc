@@ -7,6 +7,9 @@ import ScanPdf from './ScanPdf.js';
 import RenderData from './RenderData.js';
 import {css, StyleSheet} from 'aphrodite';
 import style from './style';
+import { connect } from 'react-redux'
+import * as actions from './actions'
+
 
 class UploadPdf extends Component{
     static displayName = 'UploadPdf';
@@ -33,7 +36,7 @@ class UploadPdf extends Component{
                          className={css(style.userWrap)}>
                     <label htmlFor="file">{'Load from file:'}</label>
                     <input type="file"
-                           onChange={this.onFileChange} />
+                           onChange={(event) => this.fileChange(event)} />
                     <RenderData />
                 </div>
                 <div id="container_preview"
@@ -46,4 +49,4 @@ class UploadPdf extends Component{
     }
 }
 
-export default UploadPdf;
+export default connect(state => ({ file: state.file }), { ...actions })(UploadPdf)
