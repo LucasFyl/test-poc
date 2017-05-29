@@ -1,8 +1,8 @@
-import file from './file-reducer.js';
+import fileStore from './file-reducer.js';
 import {combineReducers} from 'redux';
 
 const rootReducer = combineReducers({
-  file
+  fileStore
 });
 
 export default rootReducer;

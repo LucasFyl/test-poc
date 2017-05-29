@@ -21,7 +21,8 @@
     "test": "jest",
     "coverage": "jest --coverage",
     "storybook": "start-storybook -s ./documents -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "start": "npm run storybook"
   },
   "license": "ISC",
   "devDependencies": {

@@ -8,7 +8,7 @@ import RenderData from './RenderData.js';
 import {css, StyleSheet} from 'aphrodite';
 import style from './style';
 import { connect } from 'react-redux'
-import * as actions from './actions'
+import * as actions from './actions/actions'
 
 
 class UploadPdf extends Component{
@@ -30,6 +30,7 @@ class UploadPdf extends Component{
 
     render(){
         const {file} = this.state;
+        console.log('props', this.props.fileStore);
         return (
             <div className={css(style.outerWrap)}>
                 <div id="container_upload"
@@ -49,4 +50,4 @@ class UploadPdf extends Component{
     }
 }
 
-export default connect(state => ({ file: state.file }), { ...actions })(UploadPdf)
+export default connect(state => ({ fileStore: state.fileStore }), { ...actions })(UploadPdf)
